@@ -49,7 +49,7 @@ public class MultiThreadDemo {
 //        scheduledThreadPool.shutdown();
 
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 15; i++) {
             final int index = i;
             singleThreadExecutor.execute(new Runnable() {
                 public void run() {
@@ -62,5 +62,6 @@ public class MultiThreadDemo {
                 }
             });
         }
+        singleThreadExecutor.shutdown();
     }
 }
