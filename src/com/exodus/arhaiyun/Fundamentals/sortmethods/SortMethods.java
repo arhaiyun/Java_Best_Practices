@@ -1,4 +1,4 @@
-package com.exodus.arhaiyun.Fundamentals.sortMethods;
+package com.exodus.arhaiyun.Fundamentals.sortmethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;

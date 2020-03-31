@@ -1,7 +1,5 @@
 package com.exodus.arhaiyun.Fundamentals.binarytree;
 
-import java.io.IOException;
-
 public class TreeNode {
     int val;
     TreeNode left;

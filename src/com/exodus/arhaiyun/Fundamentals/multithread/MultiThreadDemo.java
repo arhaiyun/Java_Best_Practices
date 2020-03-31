@@ -1,4 +1,4 @@
-package com.exodus.arhaiyun.Fundamentals;
+package com.exodus.arhaiyun.Fundamentals.multithread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -63,5 +63,9 @@ public class MultiThreadDemo {
             });
         }
         singleThreadExecutor.shutdown();
+
+
+
+
     }
 }

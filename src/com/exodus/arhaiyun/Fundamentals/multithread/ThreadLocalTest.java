@@ -1,4 +1,4 @@
-package com.exodus.arhaiyun.Fundamentals;
+package com.exodus.arhaiyun.Fundamentals.multithread;
 
 import java.util.Random;
 
