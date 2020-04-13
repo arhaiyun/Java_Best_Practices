@@ -13,9 +13,11 @@ public class SimplifyPath {
                 stack.push(item);
             }
         }
-        String res = "";
-        for (String d : stack) res = "/" + d + res;
-        return res.isEmpty() ? "/" : res;
+        StringBuilder res = new StringBuilder();
+        for (String d : stack) {
+            res.insert(0, "/" + d);
+        }
+        return (res.length() == 0) ? "/" : res.toString();
     }
 
     public static void main(String[] args) {
