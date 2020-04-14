@@ -63,7 +63,6 @@ public class HttpclientWithPoolTest extends BaseHttpClientTest {
                 }
             }
         }
-
     }
 
     private void initHttpClient() {
