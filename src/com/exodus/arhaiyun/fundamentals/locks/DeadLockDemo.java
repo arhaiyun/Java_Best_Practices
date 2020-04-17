@@ -1,4 +1,4 @@
-package com.exodus.arhaiyun.fundamentals;
+package com.exodus.arhaiyun.fundamentals.locks;
 
 public class DeadLockDemo implements Runnable {
 

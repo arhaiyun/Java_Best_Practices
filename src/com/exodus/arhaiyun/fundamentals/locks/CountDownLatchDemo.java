@@ -15,7 +15,7 @@ public class CountDownLatchDemo {
             }, CountryEnum.getElement(i).getRetMsg()).start();
         }
         countDownLatch.await();
-        System.out.println(Thread.currentThread().getName() + "\t ===> 秦帝国，一统华夏");
+        System.out.println(Thread.currentThread().getName() + "\t ===> 秦帝国，一统华夏!");
     }
 
     private static void closeDoor() throws InterruptedException {

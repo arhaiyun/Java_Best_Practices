@@ -1,4 +1,4 @@
-package com.exodus.arhaiyun.fundamentals;
+package com.exodus.arhaiyun.fundamentals.locks;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
