@@ -23,6 +23,7 @@ public class ThreadLocalTest {
     }
 
     public static void main(String[] args) {
+        System.out.println(Runtime.getRuntime().availableProcessors());
         System.out.println("start");
         MyRunnable1 runnable = new MyRunnable1();
         Thread thread1 = new Thread(runnable);

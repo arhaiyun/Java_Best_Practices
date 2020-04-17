@@ -65,7 +65,5 @@ public class MultiThreadDemo {
         singleThreadExecutor.shutdown();
 
 
-
-
     }
 }

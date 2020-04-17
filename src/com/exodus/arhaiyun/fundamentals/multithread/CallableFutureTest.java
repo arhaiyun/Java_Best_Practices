@@ -23,7 +23,7 @@ public class CallableFutureTest {
 
         Future<String> task = exec.submit(call);
         Thread.sleep(1000);
-        String retn = task.get();
+        String retn = task.get(); // 会阻塞主线程直到获取返回值
         //关闭线程池
         exec.shutdown();
         System.out.println(retn + "--end main thread");
