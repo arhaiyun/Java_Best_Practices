@@ -1,8 +1,7 @@
 package com.exodus.arhaiyun.fundamentals.multithread;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author arhaiyun
@@ -11,22 +10,33 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPoolDemo {
     public static void main(String[] args) {
-//        ExecutorService threadPool = Executors.newFixedThreadPool(5);
-        ExecutorService threadPool = Executors.newSingleThreadExecutor();
-//        ExecutorService threadPool = Executors.newCachedThreadPool();
+        ExecutorService threadPool = new ThreadPoolExecutor(2, 4, 1L, TimeUnit.SECONDS,
+                new LinkedBlockingQueue<>(4), Executors.defaultThreadFactory(), new ThreadPoolExecutor.DiscardOldestPolicy());
+        try {
+            for (int i = 0; i < 12; i++) {
+                threadPool.execute(() -> {
+                    System.out.println(Thread.currentThread().getName() + "\t办理业务");
+                });
+                //TimeUnit.SECONDS.sleep(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            threadPool.shutdown();
+        }
+
+    }
+
+    private static void executorsThreadPoolTest() {
+        //ExecutorService threadPool = Executors.newFixedThreadPool(5);
+        //ExecutorService threadPool = Executors.newSingleThreadExecutor();
+        ExecutorService threadPool = Executors.newCachedThreadPool();
         try {
             for (int i = 0; i < 10; i++) {
                 threadPool.execute(() -> {
                     System.out.println(Thread.currentThread().getName() + "\t办理业务");
                 });
-
-//                cachedPool
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                TimeUnit.SECONDS.sleep(1);
             }
         } catch (Exception e) {
             e.printStackTrace();
