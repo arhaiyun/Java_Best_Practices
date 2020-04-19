@@ -11,13 +11,13 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class ThreadPoolDemo {
     public static void main(String[] args) {
         ExecutorService threadPool = new ThreadPoolExecutor(2, 4, 1L, TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>(4), Executors.defaultThreadFactory(), new ThreadPoolExecutor.DiscardOldestPolicy());
+                new LinkedBlockingQueue<>(4), Executors.defaultThreadFactory(), new ThreadPoolExecutor.CallerRunsPolicy());
         try {
             for (int i = 0; i < 12; i++) {
                 threadPool.execute(() -> {
                     System.out.println(Thread.currentThread().getName() + "\t办理业务");
                 });
-                //TimeUnit.SECONDS.sleep(1);
+//                TimeUnit.SECONDS.sleep(1);
             }
         } catch (Exception e) {
             e.printStackTrace();
