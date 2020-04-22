@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Java_Best_Practices" target="11" />
+      <module name="Java_Best_Practices" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>
